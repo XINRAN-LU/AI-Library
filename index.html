@@ -46,35 +46,35 @@
             position: relative;
             transition: all 700ms ease-in;/*相比下面的兼容所有浏览器*/
             -webkit-transition: all 700ms ease-in;/*将所有 CSS 属性的变化设置为在 700 毫秒内以 ease-in 的缓动方式进行过渡。*/
-}
+        }
 
-.panel h3 {
-    font-size: 24px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    margin: 0;
-    opacity: 0;/*透明值*/
-}
+        .panel h3 {
+            font-size: 24px;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            margin: 0;
+            opacity: 0;/*透明值*/
+        }
 
-.panel.active {
-    flex: 5;
-}
+        .panel.active {
+            flex: 5;
+        }
 
-.panel.active h3 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
-}
+        .panel.active h3 {
+            opacity: 1;
+            transition: opacity 0.3s ease-in 0.4s;
+        }
 
-@media (max-width: 480px) {
-    .container {
-      width: 100vw;
-    }
-    .panel:nth-of-type(4),
-    .panel:nth-of-type(5) {
-      display: none;
-    }
-}
+        @media (max-width: 480px) {
+            .container {
+            width: 100vw;
+            }
+            .panel:nth-of-type(4),
+            .panel:nth-of-type(5) {
+            display: none;
+            }
+        }
 
     </style>
 </head>
