@@ -1,1 +1,112 @@
-html:5
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+        body{
+            margin: 0;
+            height: auto;
+            background-color:#F1F2F4;
+        }
+        * {
+            border: 1px solid black;
+        }
+        .flex{
+            display: flex;
+        }
+        .flex1 {
+            flex: 1;
+        }
+        .column {
+            flex-direction: column;
+        }
+        .shadow1 {
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+
+        /*card*/
+        .container {
+        display: flex;
+        width:90vw;
+
+        .panel {
+    background-size: cover;/*不拉伸或压缩照片，保证不失真*/
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;/*圆角半径*/
+    color: #fff;
+    cursor: pointer;/*可以让用户知道这是一个可点击的链接*/
+    flex: 0.5;
+    margin: 10px;
+    position: relative;
+    transition: all 700ms ease-in;/*相比下面的兼容所有浏览器*/
+    -webkit-transition: all 700ms ease-in;/*将所有 CSS 属性的变化设置为在 700 毫秒内以 ease-in 的缓动方式进行过渡。*/
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;/*透明值*/
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+    .container {
+      width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+      display: none;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!--头部栏-->
+    <div style="height: 60px; background-color:#224460; font-family: VT323; font-size: 21px; color: #D0BBAA" class="flex column">
+        AI Library
+     </div>
+    <!--主体-->
+    <div class="flex1 flex column" 
+    style="font-family: 'Muli', sans-serif; align-items: center; justify-content: center; height: 100vh; overflow: hidden; margin: 0; " >
+        <div class="container">
+            <div class="panel active" style="background-image: url('https://cloudfront-us-east-2.images.arcpublishing.com/reuters/AZ3C2MC6TFISFPLH23LDWY2B74.jpg')">
+                <h3 style="color:#0D201E">ChatGPT</h3>
+            </div>
+            <div class="panel active" style="background-image: url('https://weirdwonderfulai.art/wp-content/uploads/2023/03/midjourney-prof-pic-1080x675.jpg')">
+                <h3 style="color:#EED9C8">Midjourney</h3>
+            </div>
+            <div class="panel active" style="background-image: url('https://d2e931syjhr5o9.cloudfront.net/Artboard_1_copy_4_100_be885935c3.jpg')">
+                <h3 style="color:#EED9C8">DALL-E 2</h3>
+            </div>
+            <div class="panel active" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuO4vRiUMrpcjNKx3x0O5AtfXxINvfw0m99rcMQa5upnRt6d-36oURiGdhWhbmREBgR0Q&usqp=CAU')">
+                <h3 style="color:#EED9C8">Stable Diffusion</h3>
+            </div>
+            <div class="panel active" style="background-image: url('https://mubeenblogger.com/wp-content/uploads/2023/01/Jasper-the-besting-writing-AI-tool-e1673823288550.webp')">
+                <h3 style="color:#EED9C8">Jasper AI</h3>
+            </div>
+            <div class="panel active" style="background-image: url('https://assets.weforum.org/article/image/cp87XssNFmZdaz1C70X_-lMzqqIrsV8KWBkJVTxAhd8.jpg')">
+                <h3 style="color:#EED9C8">More</h3>
+            </div>
+        </div> 
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
